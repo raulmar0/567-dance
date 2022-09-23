@@ -1,0 +1,14 @@
+.main-container {
+  width: 100vw;
+  background: green;
+  height: 100vh;
+}
+
+@media (min-width: 426px) {
+  .main-container {
+    width: 425px;
+    background: red;
+    height: 100vh;
+  }
+
+}
