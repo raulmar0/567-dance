@@ -61,7 +61,8 @@
     grid-template-columns: 75px 75px auto;
     place-items: center;
     background-color: var(--dark);
-    border: 1px solid var(--very-light-pink);
+    border-top: 1px solid var(--very-light-pink);
+    border-bottom: 1px solid var(--very-light-pink);
     height: 80px;
   }
 
@@ -77,10 +78,14 @@
     width: inherit;
   }
 
+  main {
+    overflow-y: scroll;
+  }
+
   footer {
     background-color: var(--hospital-green);
     display: grid;
-    grid-template-columns: 100px 1fr auto;
+    grid-template-columns: 116px 1fr auto;
     height: 100%;
     place-items: center;
   }
@@ -93,13 +98,12 @@
   }
 
   .bpm-slider {
-    text-align: center;
-    width: 95%;
+    display: flex;
+    width: 100%;
     height: 100%;
   }
 
   .bpm-slider input {
-    height: 100%;
     width: inherit;
   }
 
@@ -107,7 +111,8 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     background-color: var(--dark);
-    border: 1px solid var(--very-light-pink);
+    border-top: 1px solid var(--very-light-pink);
+    border-bottom: 1px solid var(--very-light-pink);
   }
 
   .voice article {
