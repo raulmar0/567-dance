@@ -56,12 +56,40 @@
     font-weight: 700;
   }
 
+  article {
+    display: grid;
+    grid-template-columns: 75px 75px auto;
+    place-items: center;
+    background-color: var(--dark);
+    border: 1px solid var(--very-light-pink);
+    height: 80px;
+  }
+
+  article figure img {
+    width: 40px;
+  }
+
+  .volume-slider {
+    width: 95%;
+  }
+
+  .volume-slider input {
+    width: inherit;
+  }
+
   footer {
     background-color: var(--hospital-green);
     display: grid;
-    grid-template-columns: 100px 1fr 100px;
+    grid-template-columns: 100px 1fr auto;
     height: 100%;
     place-items: center;
+  }
+
+  .bpm {
+    border: 3px solid var(--dark);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
   }
 
   .bpm-slider {
@@ -73,6 +101,46 @@
   .bpm-slider input {
     height: 100%;
     width: inherit;
+  }
+
+  .voice {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: var(--dark);
+    border: 1px solid var(--very-light-pink);
+  }
+
+  .voice article {
+    border: none;
+  }
+
+  .counter-buttons {
+    place-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .counter-buttons div {
+    padding: 5px;
+    height: 26px;
+    width: 26px;
+    background-color: var(--white);
+    border-radius: 50%;
+    text-align: center;
+  }
+  .counter-buttons div:hover {
+    background-color: var(--very-light-pink);
+    cursor: pointer;
+  }
+
+  .toggle-reproduction {
+    width: 65px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .toggle-reproduction img {
+    width: 32px;
   }
 
   @media (min-width: 426px) {
@@ -93,15 +161,82 @@
       <main>
         <article>
           <figure>
-            <img src="../public/vite.svg" alt="">
+            <img src="./assets/001-claves.png" alt="">
           </figure>
           <div class="toggle-mute">
-            <input type="checkbox" name="" id="">
+            <input type="checkbox" checked name="" id="">
           </div>
           <div class="volume-slider">
             <input type="range">
           </div>
         </article>
+        <article>
+          <figure>
+            <img src="./assets/003-guiro.png" alt="">
+          </figure>
+          <div class="toggle-mute">
+            <input type="checkbox" checked name="" id="">
+          </div>
+          <div class="volume-slider">
+            <input type="range">
+          </div>
+        </article>
+        <article>
+          <figure>
+            <img src="./assets/005-guitar.png" alt="">
+          </figure>
+          <div class="toggle-mute">
+            <input type="checkbox" checked name="" id="">
+          </div>
+          <div class="volume-slider">
+            <input type="range">
+          </div>
+        </article>
+        <article>
+          <figure>
+            <img src="./assets/007-bongo.png" alt="">
+          </figure>
+          <div class="toggle-mute">
+            <input type="checkbox" checked name="" id="">
+          </div>
+          <div class="volume-slider">
+            <input type="range">
+          </div>
+        </article>
+        <article>
+          <figure>
+            <img src="./assets/010-cow-bell-1.png" alt="">
+          </figure>
+          <div class="toggle-mute">
+            <input type="checkbox" checked name="" id="">
+          </div>
+          <div class="volume-slider">
+            <input type="range">
+          </div>
+        </article>
+        <div class="voice">
+          <article>
+            <figure>
+              <img src="./assets/011-voice.png" alt="">
+            </figure>
+            <div class="toggle-mute">
+              <input type="checkbox" checked name="" id="">
+            </div>
+            <div class="volume-slider">
+              <input type="range">
+            </div>
+          </article>
+          <div class="counter-buttons">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+          </div>
+        </div>
       </main>
       <footer>
         <div class="bpm">
@@ -111,7 +246,7 @@
           <input type="range">
         </div>
         <div class="toggle-reproduction">
-          toggle
+          <img src="./assets/play.png" alt="">
         </div>
       </footer>
     </div>
