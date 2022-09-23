@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <title>Mockup</title>
+</head>
+<style>
+  :root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark: #232830;
+  --very-light-pink: #C7C7C7;
+  --text-input-field: #F7F7F7;
+  --hospital-green: #ACD9B2;
+  --xsm: 12px;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+  --xl: 20px;
+  --xxl: 24px;
+}
+
+  body{
+    display: grid;
+    place-items: center;
+    font-family: 'Poppins', sans-serif !important;
+    margin: 0;
+  }
+
+  .main-container {
+    width: 100vw;
+    background: var(--very-light-pink);
+  }
+
+  .five-six-seven-dance-container {
+    display: grid;
+    grid-template-rows: 75px auto 80px;
+    height: 100vh;
+  }
+
+  header {
+    background-color: var(--hospital-green);
+    display: grid;
+    place-items: center;
+  }
+
+  .header-title {
+    font-size: var(--xxl);
+    margin: 0;
+    font-weight: 700;
+  }
+
+  footer {
+    background-color: var(--hospital-green);
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    height: 100%;
+    place-items: center;
+  }
+
+  .bpm-slider {
+    text-align: center;
+    width: 95%;
+    height: 100%;
+  }
+
+  .bpm-slider input {
+    height: 100%;
+    width: inherit;
+  }
+
+  @media (min-width: 426px) {
+    .main-container {
+      width: 425px;
+      background: var(--very-light-pink);
+      height: 100vh;
+    }
+
+  }
+</style>
+<body>
+  <div class="main-container">
+    <div class="five-six-seven-dance-container">
+      <header>
+        <h1 class="header-title">567 Dance!</h1>
+      </header>
+      <main>
+        <article>
+          <figure>
+            <img src="../public/vite.svg" alt="">
+          </figure>
+          <div class="toggle-mute">
+            <input type="checkbox" name="" id="">
+          </div>
+          <div class="volume-slider">
+            <input type="range">
+          </div>
+        </article>
+      </main>
+      <footer>
+        <div class="bpm">
+          120 bpm
+        </div>
+        <div class="bpm-slider">
+          <input type="range">
+        </div>
+        <div class="toggle-reproduction">
+          toggle
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
