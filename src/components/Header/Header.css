@@ -1,0 +1,39 @@
+header {
+  background-color: var(--hospital-green);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-title {
+  font-size: var(--xxxl);
+  margin: 0 0 0 20px;
+  font-weight: 800;
+  user-select: none;
+}
+.hamburguer-menu::before {
+  content: '';
+  width: 20px;
+  height: 4px;
+  background-color: var(--black);
+  position: absolute;
+  top: 6px;
+  border-radius: 5px;
+}
+.hamburguer-menu {
+  width: 20px;
+  height: 4px;
+  background-color: var(--black);
+  position: relative;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+.hamburguer-menu::after {
+  content: '';
+  width: 20px;
+  height: 4px;
+  background-color: var(--black);
+  position: absolute;
+  bottom: 6px;
+  border-radius: 5px;
+}

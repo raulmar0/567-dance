@@ -1,0 +1,19 @@
+.counter-button {
+  display: flex;
+  font-weight: 700;
+  width: 26px;
+  height: 26px;
+  background-color: var(--text-input-field);
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--hospital-green);
+  filter: drop-shadow(1px 1px 1px var(--very-light-pink));
+  user-select: none;
+}
+
+input[type='checkbox']:checked + .counter-button {
+  background-color: var(--button-checked);
+}

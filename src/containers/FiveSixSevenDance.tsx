@@ -1,12 +1,18 @@
 import './FiveSixSevenDance.css';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import Instruments from './Instruments/Instruments';
+
 
 export default function FiveSixSevenDance() {
   return (
     <>
       <div className="main-container">
-        <h1 className="text-3xl font-bold underline">
-          Hello world!d
-        </h1>
+        <div className="five-six-seven-dance-container">
+          <Header />
+          <Instruments />
+          <Footer />
+        </div>
       </div>
     </>
   )

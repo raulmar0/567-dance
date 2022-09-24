@@ -20,6 +20,13 @@
 body{
   display: grid;
   place-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Nunito', sans-serif;
   margin: 0;
+  background-color: var(--hospital-green);
+}
+
+@media (min-width: 426px) {
+  body {
+    background-color: var(--desktop-background);
+  }
 }

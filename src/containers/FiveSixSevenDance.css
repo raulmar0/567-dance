@@ -1,14 +1,17 @@
 .main-container {
   width: 100vw;
-  background: green;
+  background: var(--very-light-pink);
+}
+.five-six-seven-dance-container {
+  display: grid;
+  grid-template-rows: 75px auto 80px;
   height: 100vh;
 }
 
 @media (min-width: 426px) {
   .main-container {
     width: 425px;
-    background: red;
+    background: var(--very-light-pink);
     height: 100vh;
   }
-
 }

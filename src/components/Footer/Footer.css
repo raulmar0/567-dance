@@ -1,0 +1,36 @@
+footer {
+  background-color: var(--hospital-green);
+  display: grid;
+  grid-template-columns: 116px 1fr auto;
+  height: 100%;
+  place-items: center;
+}
+
+.bpm {
+  border: 3px solid var(--dark);
+  padding: 5px;
+  border-radius: 12px;
+  font-weight: 800;
+  background-color: var(--text-input-field);
+  user-select: none;
+}
+
+.bpm-slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.bpm-slider input {
+  width: inherit;
+}
+
+.toggle-reproduction {
+  width: 65px;
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-reproduction img {
+  width: 32px;
+}
