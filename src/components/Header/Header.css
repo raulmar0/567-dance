@@ -27,6 +27,7 @@ header {
   position: relative;
   margin-right: 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 .hamburguer-menu::after {
   content: '';
