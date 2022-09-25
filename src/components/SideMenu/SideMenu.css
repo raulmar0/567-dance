@@ -22,6 +22,7 @@
 }
 .side-menu-secondary h1 {
   margin-bottom: 0;
+  user-select: none;
 }
 
 .side-menu .menu-item {
@@ -30,6 +31,7 @@
   color: var(--dark);
   text-decoration: none;
   padding: 20px 0;
+  cursor: pointer;
 }
 
 .side-menu-closed {
