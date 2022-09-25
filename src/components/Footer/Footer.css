@@ -1,18 +1,28 @@
 footer {
   background-color: var(--hospital-green);
   display: grid;
-  grid-template-columns: 116px 1fr auto;
+  grid-template-columns: 85px 1fr auto;
   height: 100%;
   place-items: center;
 }
 
 .bpm {
-  border: 3px solid var(--dark);
-  padding: 5px;
-  border-radius: 12px;
   font-weight: 800;
-  background-color: var(--text-input-field);
-  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bpm input {
+  width: 40px;
+  padding: 3px 7px;
+  margin: 0;
+  font-family: Nunito;
+  font-weight: 800;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 10px;
 }
 
 .bpm-slider {
@@ -25,12 +35,12 @@ footer {
   width: inherit;
 }
 
-.toggle-reproduction {
-  width: 65px;
-  display: flex;
-  justify-content: center;
-}
+  .toggle-reproduction {
+    width: 65px;
+    display: flex;
+    justify-content: center;
+  }
 
-.toggle-reproduction img {
-  width: 32px;
-}
+  .toggle-reproduction img {
+    width: 32px;
+  }
