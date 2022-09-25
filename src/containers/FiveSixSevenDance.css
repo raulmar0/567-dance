@@ -7,6 +7,11 @@
   grid-template-rows: 75px auto 80px;
   height: 100vh;
 }
+.dummy {
+  background-color: var(--hospital-green);
+  width: 100%;
+  height: 100%;
+}
 
 @media (min-width: 426px) {
   .main-container {

@@ -6,6 +6,7 @@ import Guiro from '../../assets/003-guiro.png'
 import Bass from '../../assets/005-guitar.png'
 import Tumbao from '../../assets/007-bongo.png'
 import CowBell from '../../assets/010-cow-bell-1.png'
+import { SideMenu } from '../../components/SideMenu/SideMenu'
 
 
 export default function Instruments() {

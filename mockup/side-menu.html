@@ -60,7 +60,7 @@
     user-select: none;
   }
 
-  .hamburguer-menu {
+  .close-menu {
     width: 25px;
     height: 4px;
     background-color: var(--black);
@@ -68,8 +68,10 @@
     margin-right: 20px;
     border-radius: 5px;
     transform: rotate(45deg);
+    transition: all 0.4s
+
   }
-  .hamburguer-menu::after {
+  .close-menu::after {
     content: '';
     width: 25px;
     height: 4px;
@@ -112,7 +114,7 @@
     <div class="five-six-seven-dance-container">
       <header>
         <h1 class="header-title">567 Dance! 💃🕺</h1>
-        <div class="hamburguer-menu"></div>
+        <div class="close-menu"></div>
       </header>
       <main>
         <a href="/">Resources</a>

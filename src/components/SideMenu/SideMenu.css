@@ -1,0 +1,63 @@
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--hospital-green);
+  position: absolute;
+  top: 75px;
+  width: 100%;
+  height: calc(100% - 75px);
+}
+
+.side-menu-secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--hospital-green);
+  position: absolute;
+  top: 75px;
+  width: 100%;
+  height: calc(100% - 75px);
+}
+.side-menu-secondary h1 {
+  margin-bottom: 0;
+}
+
+.side-menu .menu-item {
+  font-weight: 500;
+  font-size: var(--xxxl);
+  color: var(--dark);
+  text-decoration: none;
+  padding: 20px 0;
+}
+
+.side-menu-closed {
+  display: none;
+}
+
+@keyframes flash-ditto {
+	0% { opacity: 0; }  
+	100% { opacity: 1; }
+}
+
+
+.flash-ditto {
+  animation-name: flash-ditto;
+}
+
+
+.animated {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+@media (min-width: 426px) {
+  .side-menu {
+    width: 425px
+  }
+  .side-menu-secondary {
+    width: 425px
+  }
+}
