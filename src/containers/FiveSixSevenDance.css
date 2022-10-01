@@ -4,13 +4,8 @@
 }
 .five-six-seven-dance-container {
   display: grid;
-  grid-template-rows: 75px auto 80px;
+  grid-template-rows: calc(75px + env(safe-area-inset-top)) auto calc(80px + env(safe-area-inset-bottom));
   height: 100vh;
-}
-.dummy {
-  background-color: var(--hospital-green);
-  width: 100%;
-  height: 100%;
 }
 
 @media (min-width: 426px) {

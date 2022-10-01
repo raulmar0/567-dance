@@ -5,6 +5,7 @@ const SideMenu = () => {
   const [selection, setSelection] = useState('menu')
   return (
     <>
+    <div>
       {
         selection === 'menu' ? 
           <div className='side-menu flash-ditto animated'>
@@ -31,6 +32,7 @@ const SideMenu = () => {
           </div>
         : null
       }
+    </div>
     </>
   )
 }

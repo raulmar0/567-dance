@@ -22,7 +22,7 @@ export default function Footer() {
         bpm
       </div>
       <div className="bpm-slider">
-        <input type="range" onChange={handleChange} value={count} min="40" max="250" step="10"/>
+        <input type="range" onChange={handleChange} value={count} min="40" max="250" step="5"/>
       </div>
       <div className="toggle-reproduction" onClick={togglePlay}>
         <img src={isPlaying ? PauseButton : PlayButton} alt=""/>

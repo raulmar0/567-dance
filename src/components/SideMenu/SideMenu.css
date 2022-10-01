@@ -5,7 +5,7 @@
   align-items: center;
   background-color: var(--hospital-green);
   position: absolute;
-  top: 75px;
+  top: calc(75px + env(safe-area-inset-top));
   width: 100%;
   height: calc(100% - 75px);
 }
@@ -16,11 +16,11 @@
   align-items: center;
   background-color: var(--hospital-green);
   position: absolute;
-  top: 75px;
+  top: calc(75px + env(safe-area-inset-top));
   width: 100%;
   height: calc(100% - 75px);
 }
-.side-menu-secondary h1 {
+.side-menu h1 {
   margin-bottom: 0;
   user-select: none;
 }
