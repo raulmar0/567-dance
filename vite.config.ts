@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [react()],
 
   // comment if using capacitor
-  // base: '/567-dance/'
+  base: '/567-dance/'
 })
