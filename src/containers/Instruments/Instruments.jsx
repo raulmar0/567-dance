@@ -7,18 +7,28 @@ import Bass from '../../assets/005-guitar.png'
 import Tumbao from '../../assets/007-bongo.png'
 import CowBell from '../../assets/010-cow-bell-1.png'
 import { SideMenu } from '../../components/SideMenu/SideMenu'
-
+import { MusicArrayFun } from '../../musicArray'
+import { useMyContext } from '../../providers/SoundsProvider'
 
 export default function Instruments() {
-  const instrumentsArray = [Clave, Guiro, Bass, Tumbao, CowBell];
+  const [state,setState] = useMyContext();
+  // const instrumentsArray = [Clave, Guiro, Bass, Tumbao, CowBell];
+  // const instrumentsStrings = ['clave', 'guiro', 'bass', 'tumbao', 'cowbell'];
+  const instrumentsArray = [Clave, CowBell];
+  const instrumentsStrings = ['clave', 'cowbell'];
   return (
     <main>
       {
         instrumentsArray.map((instrument, index) => {
-          return <Instrument key={index} instrument={instrument} />
+          return <Instrument 
+                  key={index} 
+                  instrumentString={instrumentsStrings[index]} 
+                  instrument={instrument}
+                  />
         })
       }
       <VoiceComponent />
+      <MusicArrayFun state={state}/>
     </main>
   )
 }
