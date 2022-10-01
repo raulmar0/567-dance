@@ -7,7 +7,7 @@
   position: absolute;
   top: calc(75px + env(safe-area-inset-top));
   width: 100%;
-  height: calc(100% - 75px);
+  height: calc(100% - 75px - env(safe-area-inset-top));
 }
 
 .side-menu-secondary {
@@ -18,7 +18,7 @@
   position: absolute;
   top: calc(75px + env(safe-area-inset-top));
   width: 100%;
-  height: calc(100% - 75px);
+  height: calc(100% - 75px - env(safe-area-inset-top));
 }
 .side-menu h1 {
   margin-bottom: 0;

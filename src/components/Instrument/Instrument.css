@@ -12,6 +12,11 @@ article figure img {
   width: 40px;
 }
 
+.toggle-mute{
+  display: flex;
+  place-items: center;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -53,4 +58,20 @@ input[type='checkbox']:checked + .switch {
 
 .volume-slider input {
   width: inherit;
+}
+
+.volume-slider > input[type="range"] {
+  -webkit-appearance: none;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--very-light-pink);
+}
+
+.volume-slider > input[type=range]::-webkit-slider-thumb {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+  -webkit-appearance: none;
 }

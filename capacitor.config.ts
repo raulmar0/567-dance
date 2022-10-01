@@ -6,11 +6,10 @@ const config: CapacitorConfig = {
   webDir: './www',
   bundledWebRuntime: false,
   server: {
-    hostname: '127.0.0.1:5173',
+    hostname: '127.0.0.1',
     // hostname: '192.168.1.8:5173/567-dance',
     cleartext: true,
     allowNavigation: ['*'],
-    iosScheme: 'http'
   },
 };
 
