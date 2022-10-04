@@ -39,7 +39,7 @@ export default function Footer() {
   let realBpm = ((MINUTE_IN_MS)/parseInt(bpm))/NUMBER_OF_SUBBEATS;
 
 
-  function handleChange(event: any) {
+  function handleChange(event) {
     setBpm(event.target.value)
     setState({ ...state, bpm: event.target.value })
     realBpm = ((MINUTE_IN_MS)/parseInt(bpm))/NUMBER_OF_SUBBEATS;

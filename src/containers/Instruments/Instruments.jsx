@@ -12,10 +12,8 @@ import { useMyContext } from '../../providers/SoundsProvider'
 
 export default function Instruments() {
   const [state,setState] = useMyContext();
-  // const instrumentsArray = [Clave, Guiro, Bass, Tumbao, CowBell];
-  // const instrumentsStrings = ['clave', 'guiro', 'bass', 'tumbao', 'cowbell'];
-  const instrumentsArray = [Clave, CowBell];
-  const instrumentsStrings = ['clave', 'cowbell'];
+  const instrumentsArray = [Clave, CowBell, Guiro, Tumbao, Bass];
+  const instrumentsStrings = ['clave', 'cowbell', 'guiro', 'tumbao', 'bass'];
   return (
     <main>
       {

@@ -1,16 +1,40 @@
 import {Howl, Howler} from 'howler';
 import ClaveSound from './assets/clave6.wav'
 import CowbellSound from './assets/cowbell-latin-hit.wav'
+import Guiro from './assets/guiro.wav'
+import ShortGuiro from './assets/short-guiro.wav'
+import Bongo from './assets/bongo.wav'
+import ShortBongo from './assets/short-bongo.wav'
+import Bass from './assets/bass.wav'
 
 let bell = new Howl({
   src: [CowbellSound]
 });
-let sound = new Howl({
+let clave = new Howl({
   src: [ClaveSound]
 });
+let guiro = new Howl({
+  src: [Guiro],
+})
+let shortguiro = new Howl({
+  src: [ShortGuiro]
+})
+let bongo = new Howl({
+  src: [Bongo]
+})
+let shortbongo = new Howl({
+  src: [ShortBongo]
+})
+let bass = new Howl({
+  src: [Bass]
+})
+
+
 let msg = new SpeechSynthesisUtterance();
 let synth = window.speechSynthesis;
 let rate = 1;
+let volume = 1;
+let activeNumbers = [];
 
 const dynamicRate = (bpm) => {
   bpm = parseInt(bpm)
@@ -23,7 +47,7 @@ const dynamicRate = (bpm) => {
   if(bpm >= 140 && bpm < 170) {
     return 3
   }
-  if(bpm > 170 && bpm <= 190) {
+  if(bpm >= 170 && bpm <= 190) {
     return 3.2
   }
   if(bpm > 190 && bpm <= 260) {
@@ -31,124 +55,172 @@ const dynamicRate = (bpm) => {
   }
 }
 
+const msgVolume = (volumen, active) => {
+  volume = volumen / 100 * active;
+}
+
+const setActiveNumbers = (array) => {
+  activeNumbers = array
+}
+
+const guiroVolume = (volume) => {
+  guiro.volume(volume);
+  shortguiro.volume(volume)
+}
+
+const tumbaoVolume = (volume) => {
+  bongo.volume(volume);
+  shortbongo.volume(volume);
+}
+
 export const MusicArrayFun = ({state}) => {
   bell.volume(state.cowbellVolume / 100 * state.cowbell)
-  sound.volume(state.claveVolume / 100 * state.clave)
+  clave.volume(state.claveVolume / 100 * state.clave)
+  guiroVolume(state.guiroVolume / 100 * state.guiro)
+  tumbaoVolume(state.tumbaoVolume / 100 * state.tumbao)
+  bass.volume(state.bassVolume / 100 * state.bass)
   console.log(state)
   rate = dynamicRate(state.bpm);
+  msgVolume(state.voiceVolume, state.voice);
+  setActiveNumbers(state.numbersArray)
   return null
 }
 
 
 function voice(number) {
+  if(!activeNumbers.includes(number)) {
+    return
+  }
   if (synth.speaking) {
     synth.cancel();
   }
   msg.text = number;
-  msg.rate = rate
+  msg.rate = rate;
+  msg.volume = volume;
   window.speechSynthesis.speak(msg); 
 }
 
 export const musicArray = [
   // 1.1
   {
-    fun: (counter) => {
+    fun: () => {
       voice('one')
       bell.play() 
+      guiro.play()
     }
   },
   // 1.2
   {
-    fun: (counter) => {
+    fun: () => {
     }
   },
   // 2.1
   {
-    fun: (counter) => {
+    fun: () => {
       voice('two')
-      sound.play()
-      
+      clave.play()
+      shortguiro.play()
+      shortbongo.play()
 
     }
   },
   // 2.2
   {
-    fun: (counter) => {
+    fun: () => {
+      shortguiro.play()
+
     }
   },
   // 3.1
   {
-    fun: (counter) => {
+    fun: () => {
       voice('three')
-      sound.play()
+      clave.play()
       bell.play()
+      guiro.play()
+
     }
   },
   // 3.2
   {
-    fun: (counter) => {
+    fun: () => {
     }
   },
   // 4.1
   {
-    fun: (counter) => {
+    fun: () => {
       voice('four')
-
-
+      shortguiro.play()
+      bongo.play()
+      bass.play()
     }
   },
   // 4.2
   {
-    fun: (counter) => {
+    fun: () => {
+      shortguiro.play()
+      bongo.play()
     }
   },
   // 5.1
   {
-    fun: (counter) => {
+    fun: () => {
       voice('five')
-      sound.play()
+      clave.play()
       bell.play()
+      guiro.play()
     }
   },
   // 5.2
   {
-    fun: (counter) => {
+    fun: () => {
     }
   },
   // 6.1
   {
-    fun: (counter) => {
+    fun: () => {
       voice('six')
+      shortguiro.play()
+      shortbongo.play()
+
     }
   },
   // 6.2
   {
-    fun: (counter) => {
-      sound.play()
+    fun: () => {
+      clave.play()
+      shortguiro.play()
     }
   },
   // 7.1
   {
-    fun: (counter) => {
+    fun: () => {
       voice('seven')
       bell.play()
+      guiro.play()
+
     }
   },
   // 7.2
   {
-    fun: (counter) => {
+    fun: () => {
     }
   },
   // 8.1
   {
-    fun: (counter) => {
+    fun: () => {
       voice('eight')
-      sound.play()
+      clave.play()
+      shortguiro.play()
+      bongo.play()
+      bass.play()
     }
   },
   // 8.2
   {
-    fun: (counter) => {
+    fun: () => {
+      shortguiro.play()
+      bongo.play()
     }
   },
 
