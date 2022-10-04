@@ -3,6 +3,7 @@ import PlayButton from '../../assets/play.png'
 import PauseButton from '../../assets/pause.png'
 import { useEffect, useRef, useState } from 'react'
 import { musicArray } from '../../musicArray'
+import { useMyContext } from '../../providers/SoundsProvider'
 
 // fix: bpm is not real time
 
@@ -15,6 +16,7 @@ export default function Footer() {
   const [bpm, setBpm] = useState('120')
   const [isPlaying, setIsPlaying] = useState(false)
   const [counter, setCounter] = useState(0)
+  const [state, setState] = useMyContext();
 
   let timer = null
 
@@ -39,6 +41,7 @@ export default function Footer() {
 
   function handleChange(event: any) {
     setBpm(event.target.value)
+    setState({ ...state, bpm: event.target.value })
     realBpm = ((MINUTE_IN_MS)/parseInt(bpm))/NUMBER_OF_SUBBEATS;
 
     if(isPlaying) {
@@ -49,9 +52,10 @@ export default function Footer() {
   function togglePlay() {
     setIsPlaying(!isPlaying)  
   }
+  
 
   const tick = () => {
-    musicArray[counter].fun()
+    musicArray[counter].fun(counter)    
     setCounter(counter + 1);
     console.log(counter)
   }
@@ -63,7 +67,7 @@ export default function Footer() {
         bpm
       </div>
       <div className="bpm-slider">
-        <input type="range" onChange={handleChange} value={bpm} min="40" max="250" step="5"/>
+        <input type="range" onChange={handleChange} value={bpm} min="40" max="260" step="5"/>
       </div>
       <div className="toggle-reproduction" onClick={togglePlay}>
         <img src={isPlaying ? PauseButton : PlayButton} alt=""/>

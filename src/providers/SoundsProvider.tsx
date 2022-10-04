@@ -10,6 +10,7 @@ const SoundsProvider = ({ children }: any) =>{
         "claveVolume": 50,
         "cowbell": true,
         "cowbellVolume": 50,
+        "bpm": 120,
     });
     return (            
             <AppContext.Provider value={ [state,setState] }>
