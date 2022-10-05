@@ -6,6 +6,8 @@ import ShortGuiro from './assets/short-guiro.wav'
 import Bongo from './assets/bongo.wav'
 import ShortBongo from './assets/short-bongo.wav'
 import Bass from './assets/bass.wav'
+import { Capacitor } from '@capacitor/core';
+
 
 let bell = new Howl({
   src: [CowbellSound]
@@ -37,6 +39,9 @@ let volume = 1;
 let activeNumbers = [];
 
 const dynamicRate = (bpm) => {
+  if(Capacitor.getPlatform() === 'ios' || Capacitor.getPlatform() === 'android') {
+    return bpm > 190 ? 2 : 1
+  }
   bpm = parseInt(bpm)
   if(bpm >= 40 && bpm < 90) {
     return 1
@@ -97,6 +102,7 @@ function voice(number) {
   msg.text = number;
   msg.rate = rate;
   msg.volume = volume;
+  msg.lang = 'en-us'
   window.speechSynthesis.speak(msg); 
 }
 
