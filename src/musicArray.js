@@ -39,7 +39,7 @@ let volume = 1;
 let activeNumbers = [];
 
 const dynamicRate = (bpm) => {
-  if(Capacitor.getPlatform() === 'ios' || Capacitor.getPlatform() === 'android') {
+  if(window.innerWidth < 500) {
     return bpm > 190 ? 2 : 1
   }
   bpm = parseInt(bpm)
