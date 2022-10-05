@@ -32,8 +32,10 @@ let bass = new Howl({
 })
 
 
-let msg = new SpeechSynthesisUtterance();
-let synth = window.speechSynthesis;
+if ('speechSynthesis' in window) {
+  var msg = new SpeechSynthesisUtterance();
+  var synth = window.speechSynthesis;
+}
 let rate = 1;
 let volume = 1;
 let activeNumbers = [];
