@@ -31,7 +31,6 @@ let bass = new Howl({
 
 
 let msg = new SpeechSynthesisUtterance();
-msg.lang = 'en-us'
 let synth = window.speechSynthesis;
 let rate = 1;
 let volume = 1;
@@ -105,7 +104,7 @@ export const musicArray = [
   // 1.1
   {
     fun: () => {
-      voice('one')
+      voice(1)
       bell.play() 
       guiro.play()
     }
@@ -118,7 +117,7 @@ export const musicArray = [
   // 2.1
   {
     fun: () => {
-      voice('two')
+      voice(2)
       clave.play()
       shortguiro.play()
       shortbongo.play()
@@ -135,7 +134,7 @@ export const musicArray = [
   // 3.1
   {
     fun: () => {
-      voice('three')
+      voice(3)
       clave.play()
       bell.play()
       guiro.play()
@@ -150,7 +149,7 @@ export const musicArray = [
   // 4.1
   {
     fun: () => {
-      voice('four')
+      voice(4)
       shortguiro.play()
       bongo.play()
       bass.play()
@@ -166,7 +165,7 @@ export const musicArray = [
   // 5.1
   {
     fun: () => {
-      voice('five')
+      voice(5)
       clave.play()
       bell.play()
       guiro.play()
@@ -180,7 +179,7 @@ export const musicArray = [
   // 6.1
   {
     fun: () => {
-      voice('six')
+      voice(6)
       shortguiro.play()
       shortbongo.play()
 
@@ -196,7 +195,7 @@ export const musicArray = [
   // 7.1
   {
     fun: () => {
-      voice('seven')
+      voice(7)
       bell.play()
       guiro.play()
 
@@ -210,7 +209,7 @@ export const musicArray = [
   // 8.1
   {
     fun: () => {
-      voice('eight')
+      voice(8)
       clave.play()
       shortguiro.play()
       bongo.play()

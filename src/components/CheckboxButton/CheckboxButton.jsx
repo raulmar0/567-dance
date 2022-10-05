@@ -1,12 +1,12 @@
 import './CheckboxButton.css'
 import { useMyContext } from '../../providers/SoundsProvider'
 
-export default function CheckboxButton({ placeholder, numberString }) {
+export default function CheckboxButton({ placeholder, numberElement }) {
   const [state,setState] = useMyContext();
   const handleClick = () => {
     setState({
       ...state,
-      numbersArray: state.numbersArray.includes(numberString) ? state.numbersArray.filter((number) => number !== numberString) : [...state.numbersArray, numberString]
+      numbersArray: state.numbersArray.includes(numberElement) ? state.numbersArray.filter((number) => number !== numberElement) : [...state.numbersArray, numberElement]
     });
   }
   return (
