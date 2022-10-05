@@ -25,6 +25,23 @@
   user-select: none;
 }
 
+ul li {
+  list-style-type: none;
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+ul {
+  padding: 0;
+}
+ul li a {
+  text-decoration: none;
+}
+
+.content {
+  padding: 0 40px;
+  text-align: justify;
+}
+
 .side-menu .menu-item {
   font-weight: 500;
   font-size: var(--xxxl);

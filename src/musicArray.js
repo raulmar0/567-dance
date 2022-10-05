@@ -31,6 +31,7 @@ let bass = new Howl({
 
 
 let msg = new SpeechSynthesisUtterance();
+msg.lang = 'en-us'
 let synth = window.speechSynthesis;
 let rate = 1;
 let volume = 1;
