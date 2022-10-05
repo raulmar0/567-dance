@@ -26,7 +26,8 @@ export default function Instruments() {
         })
       }
       {
-        Capacitor.getPlatform() === 'android' ? null : <VoiceComponent />
+        <VoiceComponent />
+        // Capacitor.getPlatform() === 'android' ? null : <VoiceComponent />
       }
       <MusicArrayFun state={state}/>
     </main>

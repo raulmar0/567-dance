@@ -7,6 +7,7 @@ import Bongo from './assets/bongo.wav'
 import ShortBongo from './assets/short-bongo.wav'
 import Bass from './assets/bass.wav'
 import { Capacitor } from '@capacitor/core';
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
 
 
 let bell = new Howl({
@@ -94,8 +95,17 @@ export const MusicArrayFun = ({state}) => {
 }
 
 
-function voice(number) {
+async function voice(number) {
   if(!activeNumbers.includes(number)) {
+    return
+  }
+  if(Capacitor.getPlatform() === 'android') {
+    await TextToSpeech.stop();
+    await TextToSpeech.speak({
+      text: number.toString(),
+      rate: 2,
+      volume: volume,
+    })
     return
   }
   if (synth.speaking) {
