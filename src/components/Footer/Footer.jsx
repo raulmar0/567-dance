@@ -15,8 +15,8 @@ const COUNT_LIMIT = NUMBER_OF_BEATS * NUMBER_OF_SUBBEATS;
 export default function Footer() {
   const [bpm, setBpm] = useState('120')
   const [isPlaying, setIsPlaying] = useState(false)
-  const [counter, setCounter] = useState(0)
   const [state, setState] = useMyContext();
+  let counter = 0;
 
   let timer = null
 
@@ -28,13 +28,6 @@ export default function Footer() {
     }
     return () => clearInterval(timer);
   },);
-
-  useEffect(() => {
-    if(counter === COUNT_LIMIT) {
-      setCounter(0)
-    }
-  }, [counter])
-
 
   let realBpm = ((MINUTE_IN_MS)/parseInt(bpm))/NUMBER_OF_SUBBEATS;
 
@@ -55,9 +48,11 @@ export default function Footer() {
   
 
   const tick = () => {
-    musicArray[counter].fun(counter)    
-    setCounter(counter + 1);
-    console.log(counter)
+    if(counter === COUNT_LIMIT) {
+      counter = 0;
+    }
+    musicArray[counter].fun() ;   
+    counter++
   }
 
   return (
